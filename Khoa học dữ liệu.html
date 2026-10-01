@@ -3936,8 +3936,8 @@ const CH = window.CHAPTERS;
 const $ = (s, r = document) => r.querySelector(s);
 const side = $('#side'), main = $('#main');
 const store = {
-  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  get(k, d) { try { const v = localStorage.getItem('khdl:'+k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('khdl:'+k, JSON.stringify(v)); } catch (e) {} }
 };
 let done = store.get('done', {});
 const colors = ['var(--c1)', 'var(--c2)', 'var(--c3)', '#c2185b', 'var(--accent)'];
